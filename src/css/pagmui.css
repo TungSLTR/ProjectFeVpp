@@ -1,0 +1,4 @@
+.MuiToolbar-gutters {
+    display: flex;
+    align-items: baseline !important;
+}
