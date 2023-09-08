@@ -87,11 +87,13 @@ const ProductSlide = () => {
     <div className="container">
 
 
-      <div className="container-slide-pro row">
+      <div className="container-slide-pro">
+        <div className="row">
         <div className="title-pro">
           <h2 className="titlenew cate-title"><Link href={`/product`} className="linktitle">Sản phẩm tiêu biểu</Link></h2>
           <Link href={`/product`}
             className="morenew">Xem thêm</Link>
+            </div>
         </div>
         <Slider {...settings} onSwipe={handleSwiped}>
           {products.slice(0, 12).map((product) => (
