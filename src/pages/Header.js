@@ -376,9 +376,9 @@ export default function Header() {
           </div>
         </Link>
         {showBackToTop && (
-          <button onClick={scrollToTop} id="back-to-top">
+          <Link onClick={scrollToTop} id="back-to-top">
             <img width={30} src="/img/home/up-arrow.png"></img>
-        </button>
+        </Link>
         )}
       </div>
       <section className="shopify-section spaced-header">
