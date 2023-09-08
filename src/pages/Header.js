@@ -376,7 +376,7 @@ export default function Header() {
           </div>
         </Link>
         {showBackToTop && (
-          <Link onClick={scrollToTop} id="back-to-top" href="#">
+          <Link onClick={scrollToTop} id="back-to-top" href="#" passHref>
             <img width={30} src="/img/home/up-arrow.png"></img>
           </Link>
         )}
