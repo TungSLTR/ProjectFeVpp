@@ -1158,6 +1158,15 @@ form .fieldSearch .search__button.fieldSearch__button,
   border-radius: 50%;
 }
 
+.contact-section>img {
+  margin: 15px;
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+  text-decoration: none;
+  color: #000;
+  border-radius: 50%;
+}
 .contact-section a .tel {
   display: flex;
   align-items: center;
