@@ -214,7 +214,7 @@ function CategoryProdHome() {
       <div class="container">
         {currentProducts.map((categoryProduct) => (
           <div className="mar" key={categoryProduct.cateUrl}>
-            <div class="row">
+      
               <div className="title-pro">
                 <h2 className="cate-title"><Link href={`/${categoryProduct.cateUrl}`} className="linktitle">{categoryProduct.name}</Link></h2>
                 <Link href={`/${categoryProduct.cateUrl}`}>
@@ -347,7 +347,7 @@ function CategoryProdHome() {
                   </div>
                 </div>
               ))}
-            </div>
+          
           </div>
         ))}
       </div>

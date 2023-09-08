@@ -160,7 +160,7 @@ function CategorySale() {
     >
      
       <div class="container">
-        <div class="row">
+
           <div className="title-pro">
           <h2 className="cate-title"><Link href={`/productsale`} className="linktitle">Sản phẩm giảm giá</Link></h2>
             <Link
@@ -288,7 +288,7 @@ function CategorySale() {
               onChange={handlePageChange}
             />
           </div>
-        </div>
+       
       </div>
       {/* <Modal
         isOpen={isModalOpen}

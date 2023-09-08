@@ -143,7 +143,7 @@ export default function Detail() {
     <>
       <section class="product-thuy prolist">
         <div class="container">
-          <div class="row">
+     
             <div className="title-pro">
               <h2 className="cate-title">
                 <Link href={`/product`} className="linktitle">
@@ -280,7 +280,7 @@ export default function Detail() {
                 <button className="showmore">Xem thêm</button>
               </Link>
             </div>
-          </div>
+ 
         </div>
         {/* <Modal
         isOpen={isModalOpen}
