@@ -1,8 +1,8 @@
 import React from "react";
-import { Rate } from 'antd';
+import { Rate } from "antd";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Link from "next/link"
+import Link from "next/link";
 import Currency from "./Currency";
 import { getDownloadURL, ref } from "firebase/storage";
 import { storage } from "../../firebase";
@@ -13,7 +13,9 @@ export default function Detail() {
   }, []);
   const [review, setReview] = useState([]);
   const getProduct = async () => {
-    const response = await axios.get(`${process.env.NEXT_PUBLIC_REACT_APP_BACKEND_URL}product`);
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_REACT_APP_BACKEND_URL}product`
+    );
     await Promise.all(
       response.data.products.map(async (prod) => {
         if (prod.img) {
@@ -24,7 +26,7 @@ export default function Detail() {
       })
     );
     setProduct(response.data.products);
-setReview(response.data);
+    setReview(response.data);
   };
   // const [isModalOpen, setIsModalOpen] = useState(false);
   // const [selectedProduct, setSelectedProduct] = useState(null);
@@ -142,22 +144,28 @@ setReview(response.data);
       <section class="product-thuy prolist">
         <div class="container">
           <div class="row">
-          <div className="title-pro">
-          <h2 className="cate-title"><Link href={`/product`} className="linktitle">Danh sách sản phẩm</Link></h2>
-          <Link href={`/product`}
-            className="">Xem thêm</Link>
-        </div>
+            <div className="title-pro">
+              <h2 className="cate-title">
+                <Link href={`/product`} className="linktitle">
+                  Danh sách sản phẩm
+                </Link>
+              </h2>
+              <Link href={`/product`} className="">
+                Xem thêm
+              </Link>
+            </div>
             {products.slice(0, 18).map((product) => (
-              <div class="col-lg-2 col-md-4 col-6 container-card" key={product.id}> 
-                 <div style={{ position: "relative" }}>
-                {product.giacu && product.giacu > 0 ? (
-                  <div className="sale">Sale</div>
-                ) : null}
-              </div>
+              <div
+                class="col-lg-2 col-md-4 col-6 container-card"
+                key={product.id}
+              >
+                <div style={{ position: "relative" }}>
+                  {product.giacu && product.giacu > 0 ? (
+                    <div className="sale">Sale</div>
+                  ) : null}
+                </div>
                 <div class="img-product">
-                  <Link
-                    href={`/product/${product.url}`}
-                  >
+                  <Link href={`/product/${product.url}`}>
                     <img
                       class="bottom-image"
                       src={product.img}
@@ -217,48 +225,58 @@ setReview(response.data);
                     </Link>
                   </div>
                   <div class="star-review">
-                  {product.reviews && product.reviews.length > 0 ? (
-                    <>
-                      <Rate
-                       disabled
-                        value={
-                          product.reviews.reduce(
-                            (acc, item) => acc + item.danhgia,
-                            0
-                          ) / product.reviews.length
-                        }
-                        
-                      />
-                      <span>({product.reviews.length} đánh giá)</span>
-                    </>
-                  ) : (
-                    <span>Chưa có đánh giá</span>
-                  )}
-                </div>
+                    {product.reviews && product.reviews.length > 0 ? (
+                      <>
+                        <Rate
+                          disabled
+                          value={
+                            product.reviews.reduce(
+                              (acc, item) => acc + item.danhgia,
+                              0
+                            ) / product.reviews.length
+                          }
+                        />
+                        <span>({product.reviews.length} đánh giá)</span>
+                      </>
+                    ) : (
+                      <span>Chưa có đánh giá</span>
+                    )}
+                  </div>
                   <div class="price-product">
-                  {product.giacu && product.giacu > 0 ? (
-                    <div style={{ fontSize: "15px" }}>
-                      <del>
-                        <Currency value={product.giacu} />
-                      </del>
-                    </div>
-                  ) : null}
-                  {product.dongia && product.dongia > 0 ? (
-                  <div style={{ fontSize: "20px", color: "red", fontWeight: "bold" }}>
-                    <Currency value={product.dongia} />
-                  </div>
-                ) : (
-                  <div style={{ fontSize: "20px", color: "red", fontWeight: "bold" }}>
-                    Liên hệ
-                  </div>
-                )}
+                    {product.giacu && product.giacu > 0 ? (
+                      <div style={{ fontSize: "15px" }}>
+                        <del>
+                          <Currency value={product.giacu} />
+                        </del>
+                      </div>
+                    ) : null}
+                    {product.dongia && product.dongia > 0 ? (
+                      <div
+                        style={{
+                          fontSize: "20px",
+                          color: "red",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        <Currency value={product.dongia} />
+                      </div>
+                    ) : (
+                      <div
+                        style={{
+                          fontSize: "20px",
+                          color: "red",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        Liên hệ
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
             ))}
             <div className="d-flex justify-content-center">
               <Link href={`product`}>
-                
                 <button className="showmore">Xem thêm</button>
               </Link>
             </div>

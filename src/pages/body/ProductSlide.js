@@ -87,7 +87,7 @@ const ProductSlide = () => {
     <div className="container">
 
 
-      <div className="container-slide-pro">
+      <div className="container-slide-pro row">
         <div className="title-pro">
           <h2 className="titlenew cate-title"><Link href={`/product`} className="linktitle">Sản phẩm tiêu biểu</Link></h2>
           <Link href={`/product`}

@@ -33,7 +33,7 @@ export default function Header() {
     };
   }, []);
   const handleScroll = () => {
-    if (window.pageYOffset > 100) {
+    if (window.scrollY  > 100) {
       setShowBackToTop(true);
     } else {
       setShowBackToTop(false);
@@ -315,7 +315,10 @@ export default function Header() {
     setIsLoading(false);
   };
   const scrollToTop = () => {
-    
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Tạo hiệu ứng cuộn mượt
+    });
   };
   const clickChildSubmenu = (url) => {
     setIsLoading(true); // Bật trạng thái loading
