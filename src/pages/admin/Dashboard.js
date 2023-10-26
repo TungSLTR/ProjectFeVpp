@@ -11,61 +11,61 @@ import {
   Button,
   Input,
 } from "antd";
-// import dynamic from 'next/dynamic';
-// const Pie = dynamic(() => import('@ant-design/plots').then(({ Pie }) => Pie), { ssr: false });
+import dynamic from 'next/dynamic';
+const Pie = dynamic(() => import('@ant-design/plots').then(({ Pie }) => Pie), { ssr: false });
 import { Comment } from "@ant-design/compatible";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 // ReactGA.initialize("G-5W93GCZSFP");
 // ReactGA.pageview(window.location.pathname + window.location.search);
-// const PieChartComponent = React.memo(() => {
-//   const PieChart = () => {
-//     const [chartData, setChartData] = useState([]);
+const PieChartComponent = React.memo(() => {
+  const PieChart = () => {
+    const [chartData, setChartData] = useState([]);
 
-//     useEffect(() => {
-//       // Gọi API để lấy dữ liệu cho biểu đồ
-//       const fetchData = async () => {
-//         try {
-//           const response = await axios.get(
-//             `${process.env.NEXT_PUBLIC_REACT_APP_BACKEND_URL}admin/pro/dashboardpro/ad`
-//           );
+    useEffect(() => {
+      // Gọi API để lấy dữ liệu cho biểu đồ
+      const fetchData = async () => {
+        try {
+          const response = await axios.get(
+            `${process.env.NEXT_PUBLIC_REACT_APP_BACKEND_URL}admin/pro/dashboardpro/ad`
+          );
 
-//           setChartData(response.data);
-//           console.log(response.data);
-//         } catch (error) {
-//           console.log(error);
-//         }
-//       };
+          setChartData(response.data);
+          console.log(response.data);
+        } catch (error) {
+          console.log(error);
+        }
+      };
 
-//       fetchData();
-//     }, []);
-//     const convertedData = chartData.map((item) => ({
-//       type: item.type,
-//       value: parseInt(item.value),
-//     }));
-//     const config = {
-//       // Cấu hình biểu đồ
-//       appendPadding: 10,
-//       data: convertedData, // Sử dụng dữ liệu từ API
-//       angleField: "value",
-//       colorField: "type",
-//       radius: 1,
-//       label: {
-//         type: "inner",
-//         offset: "-30%",
-//         style: { textAlign: "center" },
-//         autoRotate: false,
-//         content: "{value}",
-//       },
-//       interactions: [{ type: "element-active" }],
-//     };
+      fetchData();
+    }, []);
+    const convertedData = chartData.map((item) => ({
+      type: item.type,
+      value: parseInt(item.value),
+    }));
+    const config = {
+      // Cấu hình biểu đồ
+      appendPadding: 10,
+      data: convertedData, // Sử dụng dữ liệu từ API
+      angleField: "value",
+      colorField: "type",
+      radius: 1,
+      label: {
+        type: "inner",
+        offset: "-30%",
+        style: { textAlign: "center" },
+        autoRotate: false,
+        content: "{value}",
+      },
+      interactions: [{ type: "element-active" }],
+    };
 
-//     return <Pie {...config} />;
-//   };
-//    return <PieChart />;
-// });
-// PieChartComponent.displayName = 'PieChartComponent';
+    return <Pie {...config} />;
+  };
+   return <PieChart />;
+});
+PieChartComponent.displayName = 'PieChartComponent';
 const Dashboard = () => {
   const [review, setReview] = useState([]);
   const [counthd, setCountHd] = useState([]);
@@ -216,7 +216,7 @@ const Dashboard = () => {
             <Typography.Title level={4}>
               Biểu đồ sản phẩm đã bán
             </Typography.Title>
-            {/* <PieChartComponent /> */}
+            <PieChartComponent />
           </Card>
         </Col>
         <Col span={12}>
