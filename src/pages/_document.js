@@ -1,15 +1,11 @@
-
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import Script from "next/script";
 
-
 export default class MyDocument extends Document {
-
   render() {
     return (
       <Html lang="en">
         <Head>
-      
           {/* <link rel="icon" href="/gamezone.png" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="theme-color" content="#000000" /> 
@@ -30,13 +26,17 @@ export default class MyDocument extends Document {
             async
           />
           {/* Thêm các thẻ link */}
-       
-   
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css" async/>
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/css/bootstrap.min.css"
+            async
+          />
 
-
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.bundle.min.js" async></script>
+          <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.bundle.min.js"
+            async
+          ></script>
 
           <link
             rel="stylesheet"
@@ -63,30 +63,31 @@ export default class MyDocument extends Document {
             async
           />
           <script src="https://code.jquery.com/jquery-3.5.1.min.js" async />
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" async />
+          <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+            async
+          />
         </Head>
         <body>
+          <div id="fb-root"></div>
 
-    <div id="fb-root"></div>
+          <div id="fb-customer-chat" class="fb-customerchat"></div>
 
-
-    <div id="fb-customer-chat" class="fb-customerchat">
-    </div>
-
-    <Script   id="messenger-tag"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `      var chatbox = document.getElementById('fb-customer-chat');
+          <Script
+            id="messenger-tag"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `      var chatbox = document.getElementById('fb-customer-chat');
             chatbox.setAttribute("page_id", "107543292366543");
             chatbox.setAttribute("attribution", "biz_inbox");`,
-          }}>
+            }}
+          ></Script>
 
-    </Script>
-
-    <Script  id="messenger-sdk"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: ` window.fbAsyncInit = function() {
+          <Script
+            id="messenger-sdk"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: ` window.fbAsyncInit = function() {
               FB.init({
                 xfbml            : true,
                 version          : 'v17.0'
@@ -100,9 +101,8 @@ export default class MyDocument extends Document {
               js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
               fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));`,
-          }}>
-     
-    </Script>
+            }}
+          ></Script>
           <Main />
           <NextScript />
         </body>
@@ -110,4 +110,3 @@ export default class MyDocument extends Document {
     );
   }
 }
-

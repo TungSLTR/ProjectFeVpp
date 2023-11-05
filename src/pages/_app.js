@@ -30,6 +30,7 @@ import '../css/SlideshowGallery.css'
 import '../css/stationery.css'
 import '../css/stationerycompany.css'
 import '../css/subscribe.css'
+import '../css/selectsection.css'
 import dynamic from 'next/dynamic'
 import "../css/global.css"
 import { Provider } from "react-redux";

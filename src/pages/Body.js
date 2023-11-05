@@ -9,15 +9,14 @@ import CategoryProdHome from "./body/CategoryProdHome";
 import CategorySale from "./body/CategorySale";
 import PolicyBody from "./body/PolicyBody";
 import PartnerSlider from "./body/Partner";
-
+import SelectCate from "./body/SelectCate";
 
 export default function Body() {
   return (
     <div>
-     
       <SlideHeader />
       <Service />
-
+      <SelectCate />
       <ProductSlide />
       <CategoryProdHome />
       <CategorySale />
