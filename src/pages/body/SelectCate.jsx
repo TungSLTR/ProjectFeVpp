@@ -78,7 +78,7 @@ const SelectCate = () => {
 
   return (
     <div className="section">
-      <div className="page-width">
+      <div className="container">
         <div className="new-flex">
           {collectItems.map((item) => (
             <div className="flexitem" key={item.id}>

@@ -34,6 +34,7 @@ export default class MyDocument extends Document {
           />
 
           <script
+          rel="stylesheet"
             src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.bundle.min.js"
             async
           ></script>
@@ -58,12 +59,14 @@ export default class MyDocument extends Document {
           />
           {/* Thêm các thẻ script */}
           <script
+          rel="stylesheet"
             type="text/javascript"
             src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
             async
           />
           <script src="https://code.jquery.com/jquery-3.5.1.min.js" async />
           <script
+          rel="stylesheet"
             src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
             async
           />
